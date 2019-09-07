@@ -2,28 +2,40 @@ import html from 'choo/html';
 import choo from 'choo';
 
 const app = choo();
-app.use(countStore);
 app.route('/', mainView);
-app.route('/app', mainView);
-app.mount('body');
+app.route('/about', aboutView);
+app.route('/contact', contactView);
+app.route('*', notFoundView);
+app.mount('#app');
 
 function mainView(state, emit) {
 	return html`
-		<body>
-			<h1>count is ${state.count}</h1>
-			<button onclick=${onclick}>Increment</button>
-		</body>
+		<div id="app">
+			<h2>Home</h2>
+		</div>
 	`;
-
-	function onclick() {
-		emit('increment', 1);
-	}
 }
 
-function countStore(state, emitter) {
-	state.count = 0;
-	emitter.on('increment', function(count) {
-		state.count += count;
-		emitter.emit('render');
-	});
+function aboutView(state, emit) {
+	return html`
+		<div id="app">
+			<h2>About</h2>
+		</div>
+	`;
+}
+
+function contactView(state, emit) {
+	return html`
+		<div id="app">
+			<h2>Contact</h2>
+		</div>
+	`;
+}
+
+function notFoundView() {
+	return html`
+		<div id="app">
+			<h2>404: Page not found</h2>
+		</div>
+	`;
 }

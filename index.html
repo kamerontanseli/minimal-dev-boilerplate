@@ -10,6 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Minimal App</title>
 	<link rel="apple-touch-icon" href="/images/icons/icon-192x192.png">
+	<link rel="stylesheet" href="/web_modules/cutestrap/dist/css/cutestrap.css">
 	<script type="importmap-shim">
 	{
 	  "imports": {
@@ -23,7 +24,16 @@
 	<noscript>
 	  You need to enable JavaScript to run this app.
 	</noscript>
-	<div id="app"></div>
+	<div class="wrapper-small">
+		<h1>Welcome to my site</h1>
+		<nav>
+			<a href="/">Home</a> | 
+			<a href="/about">About</a> | 
+			<a href="/contact">Contact</a>
+		</nav>
+		<hr style="margin: 0;" />
+		<div id="app"></div>
+	</div>
   <script src="/src/index.js" type="module-shim"></script>
 </body>
 <script>
