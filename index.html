@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script defer src="/web_modules/es-module-shims.js"></script>
+	<link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#000000"/>
+	<meta charset="utf-8">
+	<meta name=”description” content="Minimal DEV PWA Boilerplate">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Minimal App</title>
+	<link rel="apple-touch-icon" href="/images/icons/icon-192x192.png">
+	<script type="importmap-shim">
+	{
+	  "imports": {
+			"choo": "/web_modules/choo/dist/bundle.js",
+			"choo/html": "/web_modules/nanohtml.js"
+		}
+	}
+	</script>
+</head>
+<body>
+	<noscript>
+	  You need to enable JavaScript to run this app.
+	</noscript>
+	<div id="app"></div>
+  <script src="/src/index.js" type="module-shim"></script>
+</body>
+<script>
+  if ('serviceWorker' in navigator && location.href.indexOf("http://127.0.0.1:8000") === -1) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').then(() => {
+        console.log('ServiceWorker registered!');
+      }, (err) => {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    });
+  }
+</script>
+</html>

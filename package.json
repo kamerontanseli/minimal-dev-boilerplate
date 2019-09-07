@@ -1,0 +1,34 @@
+{
+  "name": "minimal-dev-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "ws --spa index.html",
+    "postinstall": "pika-web",
+    "build": "npm run postinstall",
+    "clean": "prettier --write \"src/**/*.js\"",
+    "lint": "eslint src/**/*.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "choo": "^7.0.0",
+    "es-module-shims": "^0.4.2",
+    "nanohtml": "^1.8.1"
+  },
+  "devDependencies": {
+    "@pika/web": "^0.5.3",
+    "eslint": "^6.3.0",
+    "local-web-server": "^3.0.7",
+    "npm": "^6.11.3",
+    "prettier": "^1.18.2"
+  },
+  "@pika/web": {
+    "webDependencies": [
+      "choo/dist/bundle.js",
+      "nanohtml",
+      "es-module-shims"
+    ]
+  }
+}
