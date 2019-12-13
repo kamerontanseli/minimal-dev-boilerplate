@@ -22,7 +22,7 @@
     "@pika/web": "^0.5.3",
     "eslint": "^6.3.0",
     "local-web-server": "^3.0.7",
-    "npm": "^6.11.3",
+    "npm": "^6.13.4",
     "prettier": "^1.18.2"
   },
   "@pika/web": {
